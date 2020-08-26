@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherViewCell" rowHeight="165" id="KGk-i7-Jjw" customClass="WeatherViewCell" customModule="Weather_Search" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o2M-rx-JFP" userLabel="Weather Infomation View">
+                        <rect key="frame" x="16" y="12" width="288" height="134.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9g-F1-qQJ">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dth-lS-sGn">
+                                <rect key="frame" x="0.0" y="28.5" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pressure" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9i8-6A-gse">
+                                <rect key="frame" x="0.0" y="57" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4c-rb-cyk">
+                                <rect key="frame" x="0.0" y="85.5" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Eq-11-aPr">
+                                <rect key="frame" x="0.0" y="114" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" staticText="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="E4c-rb-cyk" firstAttribute="top" secondItem="9i8-6A-gse" secondAttribute="bottom" constant="8" id="0OE-Kl-pE9"/>
+                            <constraint firstAttribute="trailing" secondItem="9Eq-11-aPr" secondAttribute="trailing" id="3th-ww-Cdf"/>
+                            <constraint firstAttribute="trailing" secondItem="dth-lS-sGn" secondAttribute="trailing" id="5K2-c9-b3h"/>
+                            <constraint firstAttribute="trailing" secondItem="g9g-F1-qQJ" secondAttribute="trailing" id="6NB-Rr-eNT"/>
+                            <constraint firstAttribute="bottom" secondItem="9Eq-11-aPr" secondAttribute="bottom" id="9cb-wF-D03"/>
+                            <constraint firstItem="g9g-F1-qQJ" firstAttribute="top" secondItem="o2M-rx-JFP" secondAttribute="top" id="GYj-VA-0gA"/>
+                            <constraint firstItem="9i8-6A-gse" firstAttribute="top" secondItem="dth-lS-sGn" secondAttribute="bottom" constant="8" id="Nh8-yx-b8W"/>
+                            <constraint firstItem="E4c-rb-cyk" firstAttribute="leading" secondItem="o2M-rx-JFP" secondAttribute="leading" id="X6D-76-VZB"/>
+                            <constraint firstItem="dth-lS-sGn" firstAttribute="leading" secondItem="o2M-rx-JFP" secondAttribute="leading" id="bHX-BK-0l7"/>
+                            <constraint firstItem="9i8-6A-gse" firstAttribute="leading" secondItem="o2M-rx-JFP" secondAttribute="leading" id="dpJ-kF-jb0"/>
+                            <constraint firstAttribute="trailing" secondItem="9i8-6A-gse" secondAttribute="trailing" id="iEs-Y6-7E3"/>
+                            <constraint firstItem="9Eq-11-aPr" firstAttribute="top" secondItem="E4c-rb-cyk" secondAttribute="bottom" constant="8" id="jeX-mZ-NvT"/>
+                            <constraint firstAttribute="trailing" secondItem="E4c-rb-cyk" secondAttribute="trailing" id="ksv-77-ueQ"/>
+                            <constraint firstItem="dth-lS-sGn" firstAttribute="top" secondItem="g9g-F1-qQJ" secondAttribute="bottom" constant="8" id="opw-a9-N3e"/>
+                            <constraint firstItem="g9g-F1-qQJ" firstAttribute="leading" secondItem="o2M-rx-JFP" secondAttribute="leading" id="sgm-8M-tKG"/>
+                            <constraint firstItem="9Eq-11-aPr" firstAttribute="leading" secondItem="o2M-rx-JFP" secondAttribute="leading" id="wd6-5M-Utn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="CellColor"/>
+                <constraints>
+                    <constraint firstItem="o2M-rx-JFP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="6WA-E2-DsR"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="o2M-rx-JFP" secondAttribute="bottom" constant="12" id="8MD-90-zer"/>
+                    <constraint firstAttribute="trailing" secondItem="o2M-rx-JFP" secondAttribute="trailing" constant="16" id="CAp-We-cd1"/>
+                    <constraint firstItem="o2M-rx-JFP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="h1f-Ho-9kg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="g9g-F1-qQJ" id="Dcf-OE-P6j"/>
+                <outlet property="descriptionLabel" destination="9Eq-11-aPr" id="UJR-zP-Ix5"/>
+                <outlet property="humidityLabel" destination="E4c-rb-cyk" id="gEM-OH-LgY"/>
+                <outlet property="pressureLabel" destination="9i8-6A-gse" id="rrJ-2l-wsb"/>
+                <outlet property="temperatureLabel" destination="dth-lS-sGn" id="gIr-NS-pGh"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="182.47767857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="CellColor">
+            <color red="0.83700001239776611" green="0.83700001239776611" blue="0.83700001239776611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
