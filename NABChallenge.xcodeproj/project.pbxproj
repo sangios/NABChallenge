@@ -78,6 +78,7 @@
 		CE7BB77224F5F4FC00B1BB8E /* WeatherSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BB77424F5F4FC00B1BB8E /* WeatherSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSearchTests.swift; sourceTree = "<group>"; };
 		CE7BB77624F5F4FC00B1BB8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE7BB77E24F8B65D00B1BB8E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEAB259624F34E0C00B680EE /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		CEAB259A24F3551800B680EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEAB259C24F3581B00B680EE /* WeatherEntity+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherEntity+Ext.swift"; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 		CE5FCC9124F27C96000D2AD1 = {
 			isa = PBXGroup;
 			children = (
+				CE7BB77E24F8B65D00B1BB8E /* README.md */,
 				CE5FCC9C24F27C96000D2AD1 /* NABChallenge */,
 				CE7BB77324F5F4FC00B1BB8E /* WeatherSearchTests */,
 				CE5FCC9B24F27C96000D2AD1 /* Products */,
