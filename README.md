@@ -1,3 +1,44 @@
+# Protocol-Oriented
+
+WeatherSearchViewModelProtocol, WeatherViewCellProtocol, DataManagerProtocol, OpenWeatherMapAPIProtocol, DatabaseProtocol
+
+
+# MVVM
+
+View:                WeatherSearchViewController, WeatherViewCell
+ViewModel:      WeatherSearchViewModel, WeatherViewModel
+Model:              WeatherModel, CityModel
+
+
+# Three-tier architecture
+
+Presentation tier: Features
+
+Application tier (business logic, logic tier, or middle tier): DataCenter
+
+Data tier: Cloud, Database
+
+    It is easy to change the data source from OpenWeatherMapAPI to another
+    It is easy to make Cloud SDK for third parties
+    
+
+# Patterns applied:
+
+1. Singleton: 
+
+Database
+DataManager
+
+
+2. Facade:  
+
+DataManager
+    
+    func search(_ filter: OpenWeatherMapAPI.SearchFilter, completion: @escaping SearchCompletion)
+
+    WeatherSearchViewModel just need to know the input and output of a seach. It doesn't care about where data come (from database or api). 
+
+
 # Checklist
 
 1. Programming language: Swift is required, Objective-C is optional. (Done)
@@ -15,7 +56,7 @@ adjust the display size or font size.  (Done)
 components, infrastructure design if any
 10.Readme file includes:
 a. Brief explanation for the software development principles, patterns & practices being
-applied 
+applied  (Done)
 b. Brief explanation for the code folder structure and the key Java/Kotlin libraries and
 frameworks being used
 c. All the required steps in order to get the application run on local computer  (Done)

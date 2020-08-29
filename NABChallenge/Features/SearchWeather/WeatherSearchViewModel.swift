@@ -9,13 +9,10 @@
 import UIKit
 
 class WeatherSearchViewModel: WeatherSearchViewModelProtocol {
-    public var forecastDays: Int = 7
-    public var tempUnit = OpenWeatherMapAPI.TemperatureUnit.Metric
-    
-    public private(set) var filter = OpenWeatherMapAPI.SearchFilter()
-
     private var weatherViewModels = [WeatherViewModel]()
         
+    public private(set) var searchKey: String = ""
+    
     private var error: Error?
     private var city: CityModel?
     
@@ -28,8 +25,7 @@ class WeatherSearchViewModel: WeatherSearchViewModelProtocol {
     }
     
     func search(city: String) {
-        let filter = OpenWeatherMapAPI.SearchFilter(cityName: city, forecastDays: forecastDays, tempUnit: tempUnit)
-        self.filter = filter
+        self.searchKey = city
         
         guard city.count >= 3 else {
             self.error = nil
@@ -39,9 +35,9 @@ class WeatherSearchViewModel: WeatherSearchViewModelProtocol {
             return
         }
         
-        self.dataManager.search(filter) { [weak self] (filter, city, searchResults, error) in
+        self.dataManager.search(city) { [weak self] (searchKey, city, searchResults, error) in
             guard let self = self else { return }
-            guard self.filter == filter else { return }
+            guard self.searchKey == searchKey else { return }
             
             self.city = city
             self.error = error

@@ -27,6 +27,7 @@
 		CE776BC824F4E9BE006FE94A /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE776BC724F4E9BE006FE94A /* DateExtension.swift */; };
 		CE776BCA24F4FA9B006FE94A /* CitiEntity+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE776BC924F4FA9B006FE94A /* CitiEntity+Ext.swift */; };
 		CE7BB77524F5F4FC00B1BB8E /* WeatherSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BB77424F5F4FC00B1BB8E /* WeatherSearchTests.swift */; };
+		CE7BB78424FA6F6B00B1BB8E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BB78324FA6F6B00B1BB8E /* Database.swift */; };
 		CEAB259724F34E0C00B680EE /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEAB259524F34E0C00B680EE /* Data.xcdatamodeld */; };
 		CEAB259B24F3551800B680EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB259A24F3551800B680EE /* Constants.swift */; };
 		CEAB259D24F3581B00B680EE /* WeatherEntity+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB259C24F3581B00B680EE /* WeatherEntity+Ext.swift */; };
@@ -79,6 +80,7 @@
 		CE7BB77424F5F4FC00B1BB8E /* WeatherSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSearchTests.swift; sourceTree = "<group>"; };
 		CE7BB77624F5F4FC00B1BB8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE7BB77E24F8B65D00B1BB8E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CE7BB78324FA6F6B00B1BB8E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		CEAB259624F34E0C00B680EE /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		CEAB259A24F3551800B680EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEAB259C24F3581B00B680EE /* WeatherEntity+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherEntity+Ext.swift"; sourceTree = "<group>"; };
@@ -145,8 +147,9 @@
 				CE5FCC9D24F27C96000D2AD1 /* AppDelegate.swift */,
 				CE5FCC9F24F27C96000D2AD1 /* SceneDelegate.swift */,
 				CE5FCCCE24F27D54000D2AD1 /* Features */,
-				CEAB259024F2C11700B680EE /* Data */,
+				CEAB259024F2C11700B680EE /* DataCenter */,
 				CE5FCCCD24F27CD2000D2AD1 /* Cloud */,
+				CEAB25A024F3591700B680EE /* Database */,
 				CE5FCCD924F28000000D2AD1 /* Utilities */,
 				CEAB259424F2C2BF00B680EE /* Resources */,
 			);
@@ -207,15 +210,13 @@
 			path = WeatherSearchTests;
 			sourceTree = "<group>";
 		};
-		CEAB259024F2C11700B680EE /* Data */ = {
+		CEAB259024F2C11700B680EE /* DataCenter */ = {
 			isa = PBXGroup;
 			children = (
 				CE776BC324F40F55006FE94A /* Models */,
-				CEAB25A024F3591700B680EE /* Entities */,
-				CEAB259524F34E0C00B680EE /* Data.xcdatamodeld */,
 				CEAB259E24F3590400B680EE /* DataManager.swift */,
 			);
-			path = Data;
+			path = DataCenter;
 			sourceTree = "<group>";
 		};
 		CEAB259324F2C17D00B680EE /* SearchWeather */ = {
@@ -240,13 +241,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		CEAB25A024F3591700B680EE /* Entities */ = {
+		CEAB25A024F3591700B680EE /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				CEAB259524F34E0C00B680EE /* Data.xcdatamodeld */,
+				CE7BB78324FA6F6B00B1BB8E /* Database.swift */,
 				CEAB259C24F3581B00B680EE /* WeatherEntity+Ext.swift */,
 				CE776BC924F4FA9B006FE94A /* CitiEntity+Ext.swift */,
 			);
-			path = Entities;
+			path = Database;
 			sourceTree = "<group>";
 		};
 		F9AF5CA3BA97512DEBF41402 /* Pods */ = {
@@ -441,6 +444,7 @@
 				CEAB259F24F3590400B680EE /* DataManager.swift in Sources */,
 				CE5FCCE124F28E22000D2AD1 /* OpenWeatherMapAPI.swift in Sources */,
 				CE776BC624F41422006FE94A /* CityModel.swift in Sources */,
+				CE7BB78424FA6F6B00B1BB8E /* Database.swift in Sources */,
 				CE5FCCA024F27C96000D2AD1 /* SceneDelegate.swift in Sources */,
 				CEAB259724F34E0C00B680EE /* Data.xcdatamodeld in Sources */,
 				CE5FCCD724F27E1E000D2AD1 /* WeatherViewCell.swift in Sources */,

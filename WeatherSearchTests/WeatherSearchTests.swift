@@ -28,13 +28,18 @@ class DataManagerMock: DataManagerProtocol {
         self.api = api
     }
     
-    func search(_ filter: OpenWeatherMapAPI.SearchFilter, completion: @escaping SearchCompletion) {
+    func search(_ searchKey: String, completion: @escaping SearchCompletion) {
+        let filter = OpenWeatherMapAPI.SearchFilter(cityName: searchKey)
         api.search(filter) { (result, error) in
-            let cityModel = CityModel(name: result?.city.name ?? "")
-            let list = result?.list.compactMap { (item) -> WeatherModel? in
+            guard let result = result else {
+                completion(searchKey, nil, [], error)
+                return
+            }
+            let cityModel = CityModel(info: result.city)
+            let list = result.list.compactMap { (item) -> WeatherModel? in
                 return WeatherModel(info: item)
-            } ?? []
-            completion(filter, cityModel, list, error)
+            }
+            completion(searchKey, cityModel, list, error)
         }
     }
 }

@@ -38,7 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
-        DataManager.shared.removeUselessWeathers()
+        DataManager.shared.removeUnusedWeathers()
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {

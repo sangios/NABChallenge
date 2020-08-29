@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        DataManager.shared.removeUselessWeathers()
+        DataManager.shared.removeUnusedWeathers()
     }
 
     // MARK: UISceneSession Lifecycle

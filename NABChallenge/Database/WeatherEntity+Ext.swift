@@ -9,7 +9,11 @@
 import UIKit
 
 extension WeatherEntity {
-    func update(date: Date, temperature: Double, pressure: Int, humidity: Int, descriptionString: String) {
+    func update(date: Date,
+                temperature: Double,
+                pressure: Int,
+                humidity: Int,
+                descriptionString: String) {
         self.date = date
         self.temperature = temperature
         self.pressure = Int16(pressure)

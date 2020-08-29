@@ -8,14 +8,14 @@
 
 import UIKit
 
-extension CityEntity {
-    func update(from city: OpenWeatherMapModels.City) {
+extension CityEntity {    
+    func update(from city: CityModel) {
         self.id = Int32(city.id)
         self.country = city.country
         self.name = city.name
         self.population = Int32(city.population)
-        self.lat = city.coord.lat
-        self.long = city.coord.lon
+        self.lat = city.lat
+        self.long = city.long
         self.timezone = Int32(city.timezone)
     }
 }
