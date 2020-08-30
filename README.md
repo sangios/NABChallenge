@@ -2,6 +2,9 @@
 
 WeatherSearchViewModelProtocol, WeatherViewCellProtocol, DataManagerProtocol, OpenWeatherMapAPIProtocol, DatabaseProtocol
 
+    It is easy to change the data source like database or api
+    It is easy to create a mock test class
+
 
 # MVVM
 
@@ -40,9 +43,7 @@ DataManager
     WeatherSearchViewModel just need to know the input and output of a seach. It doesn't care about where data come (from database or api). 
 
 
-3. Adapter
 
-    
 
 
 # Checklist
