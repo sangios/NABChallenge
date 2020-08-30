@@ -6,7 +6,7 @@
 //  Copyright © 2020 Sang Nguyen. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 extension WeatherEntity {
     func update(date: Date,
@@ -19,13 +19,5 @@ extension WeatherEntity {
         self.pressure = Int16(pressure)
         self.humidity = Int16(humidity)
         self.descriptionString = descriptionString
-    }
-    
-    func update(from model: WeatherModel) {
-        update(date: model.date,
-               temperature: model.temperature,
-               pressure: model.pressure,
-               humidity: model.humidity,
-               descriptionString: model.descriptionString)
     }
 }

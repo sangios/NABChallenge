@@ -32,6 +32,8 @@
 		CEAB259B24F3551800B680EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB259A24F3551800B680EE /* Constants.swift */; };
 		CEAB259D24F3581B00B680EE /* WeatherEntity+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB259C24F3581B00B680EE /* WeatherEntity+Ext.swift */; };
 		CEAB259F24F3590400B680EE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB259E24F3590400B680EE /* DataManager.swift */; };
+		CEF5ECA724FB3D09002AC4F4 /* OpenWeatherMapAPI+DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5ECA624FB3D09002AC4F4 /* OpenWeatherMapAPI+DataManagerProtocol.swift */; };
+		CEF5ECA924FB3D7F002AC4F4 /* Database+DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5ECA824FB3D7F002AC4F4 /* Database+DataManagerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		CEAB259A24F3551800B680EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEAB259C24F3581B00B680EE /* WeatherEntity+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherEntity+Ext.swift"; sourceTree = "<group>"; };
 		CEAB259E24F3590400B680EE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CEF5ECA624FB3D09002AC4F4 /* OpenWeatherMapAPI+DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenWeatherMapAPI+DataManagerProtocol.swift"; sourceTree = "<group>"; };
+		CEF5ECA824FB3D7F002AC4F4 /* Database+DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Database+DataManagerProtocol.swift"; sourceTree = "<group>"; };
 		D39B6692578A4CB2E470976A /* Pods-NABChallenge-NABChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NABChallenge-NABChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-NABChallenge-NABChallengeUITests/Pods-NABChallenge-NABChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E933224B8EB26F262BF5BBB7 /* Pods_NABChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NABChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -188,6 +192,7 @@
 			children = (
 				CE5FCCDE24F28C09000D2AD1 /* OpenWeatherMapModels.swift */,
 				CE5FCCE024F28E22000D2AD1 /* OpenWeatherMapAPI.swift */,
+				CEF5ECA624FB3D09002AC4F4 /* OpenWeatherMapAPI+DataManagerProtocol.swift */,
 			);
 			path = OpenWeatherMap;
 			sourceTree = "<group>";
@@ -244,12 +249,21 @@
 		CEAB25A024F3591700B680EE /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				CEF5ECAA24FB3DE8002AC4F4 /* EntitiesExtension */,
 				CEAB259524F34E0C00B680EE /* Data.xcdatamodeld */,
 				CE7BB78324FA6F6B00B1BB8E /* Database.swift */,
+				CEF5ECA824FB3D7F002AC4F4 /* Database+DataManagerProtocol.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		CEF5ECAA24FB3DE8002AC4F4 /* EntitiesExtension */ = {
+			isa = PBXGroup;
+			children = (
 				CEAB259C24F3581B00B680EE /* WeatherEntity+Ext.swift */,
 				CE776BC924F4FA9B006FE94A /* CitiEntity+Ext.swift */,
 			);
-			path = Database;
+			path = EntitiesExtension;
 			sourceTree = "<group>";
 		};
 		F9AF5CA3BA97512DEBF41402 /* Pods */ = {
@@ -440,6 +454,7 @@
 			files = (
 				CE5FCCDD24F28AAA000D2AD1 /* APIHelper.swift in Sources */,
 				CE5FCCD024F27D91000D2AD1 /* WeatherViewModel.swift in Sources */,
+				CEF5ECA924FB3D7F002AC4F4 /* Database+DataManagerProtocol.swift in Sources */,
 				CE5FCC9E24F27C96000D2AD1 /* AppDelegate.swift in Sources */,
 				CEAB259F24F3590400B680EE /* DataManager.swift in Sources */,
 				CE5FCCE124F28E22000D2AD1 /* OpenWeatherMapAPI.swift in Sources */,
@@ -453,6 +468,7 @@
 				CE5FCCDF24F28C09000D2AD1 /* OpenWeatherMapModels.swift in Sources */,
 				CE5FCCDB24F28264000D2AD1 /* WeatherModel.swift in Sources */,
 				CE776BCA24F4FA9B006FE94A /* CitiEntity+Ext.swift in Sources */,
+				CEF5ECA724FB3D09002AC4F4 /* OpenWeatherMapAPI+DataManagerProtocol.swift in Sources */,
 				CEAB259D24F3581B00B680EE /* WeatherEntity+Ext.swift in Sources */,
 				CE5FCCD424F27DD4000D2AD1 /* WeatherSearchViewController.swift in Sources */,
 				CEAB259B24F3551800B680EE /* Constants.swift in Sources */,

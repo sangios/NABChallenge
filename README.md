@@ -40,6 +40,11 @@ DataManager
     WeatherSearchViewModel just need to know the input and output of a seach. It doesn't care about where data come (from database or api). 
 
 
+3. Adapter
+
+    
+
+
 # Checklist
 
 1. Programming language: Swift is required, Objective-C is optional. (Done)
