@@ -12,6 +12,7 @@ class WeatherSearchViewModel: WeatherSearchViewModelProtocol {
     private var weatherViewModels = [WeatherViewModel]()
         
     public private(set) var searchKey: String = ""
+    public private(set) var forecastDays: Int = 7
     
     private var error: Error?
     private var city: CityModel?
@@ -35,7 +36,7 @@ class WeatherSearchViewModel: WeatherSearchViewModelProtocol {
             return
         }
         
-        self.dataManager.search(city) { [weak self] (searchKey, city, searchResults, error) in
+        self.dataManager.search(city, forecastDays: forecastDays) { [weak self] (searchKey, city, searchResults, error) in
             guard let self = self else { return }
             guard self.searchKey == searchKey else { return }
             

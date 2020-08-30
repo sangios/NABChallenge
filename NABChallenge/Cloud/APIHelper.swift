@@ -153,17 +153,21 @@ class APIHelper: NSObject {
 
 extension APIHelper: CachedResponseHandler {
     func dataTask(_ task: URLSessionDataTask, willCacheResponse response: CachedURLResponse, completion: @escaping (CachedURLResponse?) -> Void) {
+        #if DEBUG
+        NSLog("willCacheResponse \(response.response)")
+        #endif
         
         var urlResponse = response.response
-        if let httpResponse = urlResponse as? HTTPURLResponse, let url = httpResponse.url, var headers = httpResponse.allHeaderFields as? [String: String], headers["Cache-Control"] == nil {
-            
-            headers["Cache-Control"] = "max-age=10800"
-            if let newResponse = HTTPURLResponse(url: url, statusCode: httpResponse.statusCode, httpVersion: nil, headerFields: headers) {
-                urlResponse = newResponse
-                
-                #if DEBUG
-                NSLog("NEW RESPONSE HEADER \(headers)")
-                #endif
+        if let httpResponse = urlResponse as? HTTPURLResponse, var headers = httpResponse.allHeaderFields as? [String: String], headers["Cache-Control"] == nil {
+            if let url = httpResponse.url {
+                headers["Cache-Control"] = "max-age=10800"
+                if let newResponse = HTTPURLResponse(url: url, statusCode: httpResponse.statusCode, httpVersion: nil, headerFields: headers) {
+                    urlResponse = newResponse
+                    
+                    #if DEBUG
+                    NSLog("NEW RESPONSE HEADER \(headers)")
+                    #endif
+                }
             }
         }
         

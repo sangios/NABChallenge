@@ -18,6 +18,7 @@ Application tier (business logic, logic tier, or middle tier): DataCenter
 
 Data tier: Cloud, Database
 
+    It is easy to implement UI first
     It is easy to change the data source from OpenWeatherMapAPI to another
     It is easy to make Cloud SDK for third parties
     

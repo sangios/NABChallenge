@@ -152,3 +152,31 @@ extension OpenWeatherMapAPI: OpenWeatherMapAPIProtocol {
         }
     }
 }
+
+extension OpenWeatherMapAPI: DataManagerProtocol {
+    func save(city: CityModel, weathers: [WeatherModel]) {
+        
+    }
+    
+    func removeUnusedWeathers() {
+        
+    }
+    
+    func search(_ searchKey: String, forecastDays: Int, completion: @escaping DataManagerProtocol.SearchCompletion) {
+        
+        let filter = OpenWeatherMapAPI.SearchFilter(cityName: searchKey, forecastDays: forecastDays)
+        
+        self.search(filter) { (searchResults, error) in
+            guard let results = searchResults else {
+                completion(searchKey, nil, [], error)
+                return
+            }
+            let weathers = results.list.compactMap {
+                return WeatherModel(info: $0)
+            }
+            let city = CityModel(info: results.city)
+            
+            completion(searchKey, city, weathers, error)
+        }
+    }
+}

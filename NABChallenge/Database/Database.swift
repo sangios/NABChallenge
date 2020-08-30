@@ -77,24 +77,6 @@ class Database: DatabaseProtocol {
         return (nil, [])
     }
     
-    func removeUnusedWeathers() {
-        let startOfDate = Date().startOfDate()
-        
-        let context = persistentContainer.viewContext
-        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "WeatherEntity")
-        let predicate = NSPredicate(format: "date < %@", startOfDate as NSDate)
-        fetch.predicate = predicate
-
-        do {
-            guard let entities = try context.fetch(fetch) as? [WeatherEntity] else {
-                return
-            }
-            remove(weathers: entities, in: context)
-        } catch {
-            NSLog("Failed to fetch cites: \(error)")
-        }
-    }
-    
     func add(weathers: [WeatherModel], for city: CityEntity) {
         let context = persistentContainer.viewContext
         
@@ -124,6 +106,48 @@ class Database: DatabaseProtocol {
             try context.save()
         } catch {
             NSLog("SAVE DATA ERROR \(error.localizedDescription)")
+        }
+    }
+}
+
+extension Database: DataManagerProtocol {
+    func search(_ searchKey: String, forecastDays: Int, completion: @escaping DataManagerProtocol.SearchCompletion) {
+        let results = self.loadWeathers(for: searchKey)
+        let startSecsOfDate = Date().startSecondsOfDate()
+        
+        let list = results.weathers.compactMap { (entity) -> WeatherModel? in
+            guard let date = entity.date else { return nil }
+            guard date.timeIntervalSince1970 >= startSecsOfDate else { return nil }
+            return WeatherModel.create(from: entity)
+        }
+        let cityModel = CityModel.create(from: results.city)
+        
+        completion(searchKey, cityModel, list, nil)
+    }
+    
+    func save(city: CityModel, weathers: [WeatherModel]) {
+        let dataInDB = self.loadWeathers(for: city.name)
+        let cityEntity = self.updateCity(dataInDB.city, from: city)
+        
+        self.remove(weathers: dataInDB.weathers)
+        self.add(weathers: weathers, for: cityEntity)
+    }
+    
+    func removeUnusedWeathers() {
+        let startOfDate = Date().startOfDate()
+        
+        let context = persistentContainer.viewContext
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "WeatherEntity")
+        let predicate = NSPredicate(format: "date < %@", startOfDate as NSDate)
+        fetch.predicate = predicate
+
+        do {
+            guard let entities = try context.fetch(fetch) as? [WeatherEntity] else {
+                return
+            }
+            remove(weathers: entities, in: context)
+        } catch {
+            NSLog("Failed to fetch cites: \(error)")
         }
     }
 }
