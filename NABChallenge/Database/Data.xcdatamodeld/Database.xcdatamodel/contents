@@ -8,7 +8,7 @@
         <attribute name="name" attributeType="String" maxValueString="256" defaultValueString=""/>
         <attribute name="population" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="timezone" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="weathers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeatherEntity" inverseName="city" inverseEntity="WeatherEntity"/>
+        <relationship name="weathers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WeatherEntity" inverseName="city" inverseEntity="WeatherEntity"/>
     </entity>
     <entity name="WeatherEntity" representedClassName="WeatherEntity" syncable="YES" codeGenerationType="class">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
